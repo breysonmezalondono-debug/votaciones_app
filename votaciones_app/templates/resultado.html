@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resultado de Consulta</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#f4f6f9;
+}
+
+.contenedor{
+    width:450px;
+    margin:100px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.info{
+    margin-top:10px;
+    font-size:16px;
+}
+
+a{
+    display:block;
+    margin-top:20px;
+    text-align:center;
+    padding:10px;
+    background:#0d6efd;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+a:hover{
+    background:#0b5ed7;
+}
+
+.error{
+    text-align:center;
+    color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h2>Resultado de Consulta</h2>
+
+{% if datos %}
+
+<p class="info"><b>Identificación:</b> {{ datos.identificacion }}</p>
+<p class="info"><b>Lugar:</b> {{ datos.lugar }}</p>
+<p class="info"><b>Dirección:</b> {{ datos.direccion }}</p>
+<p class="info"><b>Mesa:</b> {{ datos.mesa }}</p>
+<p class="info"><b>Zona:</b> {{ datos.zona }}</p>
+
+{% else %}
+
+<p class="error">No se encontró información para este ciudadano.</p>
+
+{% endif %}
+
+<a href="/consulta">Nueva consulta</a>
+
+</div>
+
+</body>
+</html>
